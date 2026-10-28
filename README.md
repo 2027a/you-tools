@@ -3,6 +3,8 @@
 A small CLI to retrieve existing YouTube metadata, thumbnails, captions, audio
 and video. One video per invocation, no API key or account required.
 
+Canonical repository: [2027a/you-tools on Forgejo](https://git.2027a.net/2027a/you-tools).
+
 **V1 only retrieves what is available.** It does not generate transcripts,
 translate, transcode, remux, merge streams, extract audio from video, or convert
 caption files. Downloaded assets keep their original bytes; filenames may change.
@@ -15,7 +17,7 @@ Dependencies (including yt-dlp's challenge solver) are locked in `uv.lock`;
 no solver code is fetched at runtime.
 
 ```sh
-git clone git@github.com:2027a/you-tools.git ~/Projets/you-tools
+git clone ssh://git@git.2027a.net:222/2027a/you-tools.git ~/Projets/you-tools
 cd ~/Projets/you-tools
 uv sync --locked
 chmod +x bin/you-tools
@@ -108,6 +110,9 @@ uv run --locked python -m unittest discover -s tests -v  # offline fixtures/loca
 uv run --locked ruff check .
 uv lock --upgrade && uv sync --locked                  # explicit dependency update
 ```
+
+The Forgejo Actions workflow runs the same offline checks on Python 3.11 and
+3.14 when an `ubuntu-latest` runner is available.
 
 ## License
 

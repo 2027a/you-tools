@@ -13,7 +13,7 @@ dependencies = ["yt-dlp[default]>=2026.10.14"]
 you-tools = "you_tools.cli:main"
 
 [project.urls]
-Repository = "https://github.com/2027a/you-tools"
+Repository = "https://git.2027a.net/2027a/you-tools"
 
 [dependency-groups]
 dev = ["ruff>=0.14"]
