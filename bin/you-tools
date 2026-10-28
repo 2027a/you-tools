@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="$(dirname "$(dirname "$(readlink -f -- "${BASH_SOURCE[0]}")")")"
+if [[ ! -x "$ROOT/.venv/bin/you-tools" ]]; then
+    printf 'Run uv sync --locked in %s first.\n' "$ROOT" >&2
+    exit 1
+fi
+exec "$ROOT/.venv/bin/you-tools" "$@"

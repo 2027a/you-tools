@@ -1,0 +1,36 @@
+[project]
+name = "you-tools"
+version = "0.1.0"
+description = "Retrieve existing YouTube metadata, captions, thumbnails, audio and video."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "Mathieu Rousseau"}]
+dependencies = ["yt-dlp[default]>=2026.10.14"]
+
+[project.scripts]
+you-tools = "you_tools.cli:main"
+
+[project.urls]
+Repository = "https://github.com/2027a/you-tools"
+
+[dependency-groups]
+dev = ["ruff>=0.14"]
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+include = ["src", "tests"]
+extraPaths = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
